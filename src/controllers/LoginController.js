@@ -5,7 +5,7 @@ const LoginController = {
     // const { email } = req.body;
 
     // const newLogin = await services.CreateLoginService(name);
-    console.log(req.body);
+    console.log('oi');
     res.status(201).json([]);
   },
 };
