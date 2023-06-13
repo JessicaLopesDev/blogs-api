@@ -1,13 +1,10 @@
-// const services = require('../services/products');
+import LoginService from '../services/LoginService';
 
 const LoginController = {
   createLogin: async (req, res) => {
-    // const { email } = req.body;
-
-    // const newLogin = await services.CreateLoginService(name);
-    console.log('oi');
-    res.status(201).json([]);
+    const newLogin = await LoginService(req.body);
+    res.status(200).json(newLogin);
   },
 };
 
-module.exports = LoginController;
+export default LoginController;
