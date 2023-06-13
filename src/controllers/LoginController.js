@@ -1,11 +1,13 @@
 // const services = require('../services/products');
 
-const ProductsController = {
-  searchProducts: async (_req, res) => {
-    // const products = await services.SearchProductsService();
+const LoginController = {
+  createLogin: async (req, res) => {
+    // const { email } = req.body;
 
-    res.status(200).json([]);
+    // const newLogin = await services.CreateLoginService(name);
+    console.log(req.body);
+    res.status(201).json([]);
   },
 };
 
-module.exports = ProductsController;
+module.exports = LoginController;
