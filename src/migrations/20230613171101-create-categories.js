@@ -12,7 +12,10 @@ module.exports = {
       name: {
         type: Sequelize.STRING,
       },
-    });
+    }, {
+        timestamps: false,
+      },
+    );
   },
 
   down: async (queryInterface, Sequelize) => {

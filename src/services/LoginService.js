@@ -1,8 +1,15 @@
-const User = require('../models/User');
+const { User } = require('../models');
+const { createToken } = require('../utils/JWT');
 
 const LoginService = async ({ email, _password }) => {
-  const newLogin = await User.findOne({ where: { email } });
-  return newLogin;
+  const user = await User.findOne({ where: { email } });
+
+   const payload = {
+     id: user.id,
+   };
+   const token = createToken(payload);
+
+   return token;
 };
 
 module.exports = LoginService;
