@@ -1,8 +1,9 @@
 const express = require('express');
-
+const appRoutes = require('./routes');
 // ...
 
 const app = express();
+app.use(appRoutes);
 
 // não remova ou mova esse endpoint
 app.get('/', (_request, response) => {

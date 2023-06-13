@@ -1,9 +1,9 @@
 const express = require('express');
 
-const LoginController = require('../controllers/LoginController');
+// const LoginController = require('../controllers/LoginController');
 
 const loginRouter = express.Router();
 
-loginRouter.post('/', LoginController.createProduct);
+loginRouter.post('/', () => console.log('oi'));
 
 module.exports = loginRouter;
