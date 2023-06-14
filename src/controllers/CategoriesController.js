@@ -10,6 +10,11 @@ const CategoriesController = {
     }
     return res.status(201).json(category);
   },
+
+  findAll: async (_req, res) => {
+    const categories = await CategoriesService.findAll();
+    return res.status(200).json(categories);
+  },
 };
 
 module.exports = CategoriesController;

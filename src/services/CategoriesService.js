@@ -8,6 +8,11 @@ const CategoriesService = {
       name: category.name,
     };
   },
+
+  findAll: async () => {
+    const categories = Category.findAll();
+    return categories;
+  },
 };
 
 module.exports = CategoriesService;
