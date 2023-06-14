@@ -8,6 +8,12 @@ const UserService = {
   
     return token;
   },
+  findAll: async () => {
+    const users = User.findAll({
+      attributes: { exclude: ['password'] },
+    });
+    return users;
+  },
 };
 
 module.exports = UserService;
