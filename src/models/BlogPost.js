@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     {
-      tableName: 'blog_post',
+      tableName: 'blog_posts',
       timestamps: false,
       underscored: true
     },
@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
   BlogPost.associate = ({ User }) => {
     BlogPost.belongsTo(User, {
       foreignKey: 'user_id',
-      as: 'users'
+      as: 'user'
     });
   };
   
