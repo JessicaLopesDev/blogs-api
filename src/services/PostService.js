@@ -17,12 +17,33 @@ const PostService = {
           as: 'user',
           attributes: ['id', 'displayName', 'email', 'image'],
         },
-        { model: Category, as: 'categories' },
+        { 
+          model: Category,
+          as: 'categories',
+        },
       ],
     });
     console.log(posts);
 
     return posts;
+  },
+
+  findById: async (id) => {
+    const post = BlogPost.findOne({
+      where: { id },
+      include: [
+        {
+          model: User,
+          as: 'user',
+          attributes: { exclude: 'password' },
+        },
+        {
+          model: Category,
+          as: 'categories',
+        },
+      ],
+    });
+    return post;
   },
 };
 
